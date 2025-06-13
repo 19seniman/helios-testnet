@@ -860,7 +860,7 @@ function safeRender() {
   setTimeout(() => {
     try {
       if (!isHeaderRendered) {
-        figlet.text("SHADOW ECONOMY", { font: "Weird" }, (err, data) => {
+        figlet.text("SHADOW ECONOMY", { font: "Crawford" }, (err, data) => {
           if (!err) headerBox.setContent(`{center}{bold}{cyan-fg}${data}{/cyan-fg}{/bold}{/center}`);
           isHeaderRendered = true;
         });
