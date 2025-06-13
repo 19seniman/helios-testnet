@@ -1,15 +1,15 @@
 {
   "name": "SHADOW - ECONOMY",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "lim.js",
   "type": "module",
   "scripts": {
     "start": "node lim.js"
   },
-  "keywords": [],
+  "keywords": ["blockchain", "crypto", "helios", "automation"],
   "author": "19Seniman & VISZ",
   "license": "ISC",
-  "description": "",
+  "description": "A bot for automating transactions on the Helios Testnet.",
   "dependencies": {
     "axios": "^1.8.4",
     "blessed": "^0.1.81",
