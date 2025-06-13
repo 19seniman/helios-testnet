@@ -643,7 +643,7 @@ async function runDailyActivity() {
 
 const screen = blessed.screen({
   smartCSR: true,
-  title: "HELIOS TESTNET AUTO BOT",
+  title: "HELIOS TESNET EVM",
   autoPadding: true,
   fullUnicode: true,
   mouse: true,
