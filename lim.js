@@ -441,5 +441,4 @@ async function bridge(wallet, amount, recipient, destChainId) {
 async function stake(wallet, amount, validatorAddress, validatorName) {
   try {
     if (!wallet.address || !ethers.isAddress(wallet.address)) {
-      throw new Error(`Invalid wallet address: ${wallet.address}`);
-    }
+      throw new Error(`Invalid wallet address: ${wallet.address
