@@ -861,7 +861,13 @@ function safeRender() {
     try {
       if (!isHeaderRendered) {
         figlet.text("SHADOW ECONOMY", { font: "Banner4" }, (err, data) => {
-          if (!err) headerBox.setContent(`{center}{bold}{cyan-fg}${data}{/cyan-fg}{/bold}{/center}`);
+          if (!err) {
+            // Mengatur warna teks menjadi merah dan putih
+            const coloredData = data.split('\n').map((line, index) => {
+              return index % 2 === 0 ? chalk.red(line) : chalk.white(line);
+            }).join('\n');
+            headerBox.setContent(`{center}{bold}${coloredData}{/bold}{/center}`);
+          }
           isHeaderRendered = true;
         });
       }
@@ -874,6 +880,7 @@ function safeRender() {
     if (renderQueue.length > 0) safeRender();
   }, 100);
 }
+
 
 function adjustLayout() {
   const screenHeight = screen.height || 24;
