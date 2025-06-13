@@ -284,7 +284,7 @@ async function updateWalletData() {
     try {
       const proxyUrl = proxies[i % proxies.length] || null;
       const provider = await getProviderWithProxy(proxyUrl);
-      const wallet = new ethers.Wallet(privateKeys[i], provider);
+      const wallet = new ethers.Wallet(privateKey, provider);
       
       const tokenContract = new ethers.Contract(TOKEN_ADDRESS, tokenAbi, provider);
       const hlsBalance = await tokenContract.balanceOf(wallet.address);
@@ -428,4 +428,18 @@ async function bridge(wallet, amount, recipient, destChainId) {
     addLog("Bridge Transaction Confirmed And Synced With Portal", "success");
   } catch (error) {
     addLog(`Bridge operation failed: ${error.message}`, "error");
-   
+    if (error.reason) {
+      addLog(`Revert reason: ${error.reason}`, "error");
+    }
+    if (error.receipt) {
+      addLog(`Transaction receipt: ${JSON.stringify(error.receipt)}`, "debug");
+    }
+    throw error;
+  }
+}
+
+async function stake(wallet, amount, validatorAddress, validatorName) {
+  try {
+    if (!wallet.address || !ethers.isAddress(wallet.address)) {
+      throw new Error(`Invalid wallet address: ${wallet.address}`);
+    }
