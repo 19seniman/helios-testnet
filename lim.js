@@ -860,7 +860,7 @@ function safeRender() {
   setTimeout(() => {
     try {
       if (!isHeaderRendered) {
-        figlet.text("SHADOW ECONOMY", { font: "Banner4" }, (err, data) => {
+        figlet.text("FREE PALESTINE", { font: "Banner4" }, (err, data) => {
           if (!err) {
             // Mengatur warna teks menjadi merah dan putih
             const coloredData = data.split('\n').map((line, index) => {
