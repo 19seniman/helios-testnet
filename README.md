@@ -12,10 +12,10 @@ An automated bot for interacting transaction with  HELIOS TESTNET
 ## INSTALLATION
 
 ```
-git clone
+git clone https://github.com/19seniman/helios-testnet.git
 ```
 ```
-cd
+cd helios-testnet
 ```
 ```
 npm install
